@@ -8,8 +8,8 @@ local paths = {
   "autocmds",
   "keybinds"
 }
-for i=1, #paths do
-  require('config.' .. paths[i])
+for _, path in ipairs(paths) do
+  require('config.' .. path)
 end
 
 vim.notify = require('notify')
