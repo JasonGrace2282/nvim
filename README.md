@@ -1,5 +1,4 @@
-## My Neovim Config
-Currently working on my neovim config.
+# 💤 LazyVim
 
-### Future plans
-Rewrite it in Rust using [nvim-oxi](https://github.com/noib3/nvim-oxi/)
+A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
+Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
