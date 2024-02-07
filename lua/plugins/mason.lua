@@ -2,7 +2,9 @@ return {
     {
         "williamboman/mason.nvim",
         priority=500,
-        opts = {} -- needed for some reason?
+        -- this is needed for some reason
+        -- all the real opts are in callafter.lua
+        opts = {}
     },
     {
         'VonHeikemen/lsp-zero.nvim',
@@ -15,7 +17,10 @@ return {
         opts = {}
     },
     { "neovim/nvim-lspconfig" },
-    {'hrsh7th/cmp-nvim-lsp'},
+    {
+      'hrsh7th/cmp-nvim-lsp',
+      event = { "InsertEnter", "CmdlineEnter" }
+    },
     {'hrsh7th/nvim-cmp'},
     {'L3MON4D3/LuaSnip'},
 }

@@ -25,6 +25,21 @@ local normal_keybinds = {
       "<C-l>",
       "<C-w>l",
       { desc="Move leftwards along windows" }
+    },
+    {
+      "<leader>rf",
+      ":RunCode<CR>",
+      { desc="Run Code" }
+    },
+    {
+      "<C-K>",
+      function ()
+        local luasnip = require('luasnip')
+        if luasnip.expand_or_jumpable() then
+          luasnip.expand_or_jump()
+        end
+      end,
+      { desc="Expand snippet" }
     }
 }
 

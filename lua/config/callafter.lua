@@ -9,9 +9,18 @@ end)
 
 -- to learn how to use mason.nvim with lsp-zero
 -- read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guide/integrate-with-mason-nvim.md
+local lspconfig = require('lspconfig')
+require("mason").setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = {},
+  ensure_installed = {"rust_analyzer"},
   handlers = {
     lsp_zero.default_setup,
+    lua_ls = function ()
+      lspconfig.lua_ls.setup({})
+    end,
+    rust_analyzer = function ()
+      lspconfig.rust_analyzer.setup({})
+    end
   },
 })
+
