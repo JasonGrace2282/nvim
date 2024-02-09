@@ -23,3 +23,5 @@ vim.keymap.set("n", "<Leader>rf", ":RunFile<CR>")
 vim.keymap.set("n", "<Leader>vc", ":VimtexCompile<CR>")
 
 vim.keymap.set('n', '<Leader>d', '"_d')
+
+vim.keymap.set('i', ";;", "<C-o>A;")
