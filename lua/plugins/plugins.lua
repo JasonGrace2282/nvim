@@ -87,6 +87,9 @@ return {
         },
         markdown = "glow"
       },
+      project = {
+
+      }
     },
   },
   {

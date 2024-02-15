@@ -18,6 +18,7 @@ for i = 1, #keys, 1 do
   vim.keymap.set("n", keys[i], "")
 end
 
+vim.keymap.set("n", "<Leader>st", ":Telescope live_grep<CR>")
 
 vim.keymap.set("n", "<Leader>rf", ":RunFile<CR>")
 vim.keymap.set("n", "<Leader>vc", ":VimtexCompile<CR>")
@@ -25,3 +26,5 @@ vim.keymap.set("n", "<Leader>vc", ":VimtexCompile<CR>")
 vim.keymap.set('n', '<Leader>d', '"_d')
 
 vim.keymap.set('i', ";;", "<C-o>A;")
+vim.keymap.set("i", "mtst", "class Test(Scene):<CR>def construct(self):<CR>")
+vim.keymap.set("i", "tcng", "with tempconfig({}):<CR>Test().render()")
