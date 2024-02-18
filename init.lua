@@ -10,13 +10,12 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, {
             -- Vim creates a buffer for folder. Close it.
             vim.cmd(":bd 1")
             require("telescope.builtin").find_files({ search_dirs = { first_arg } })
-            -- require("neo-tree.command").execute({ toggle = true })
         end
     end,
     group = ts_group,
 })
 
--- load files
+-- load paths in lua/config
 local paths = {
   "lazy",
   "opts",
@@ -27,4 +26,7 @@ for _, path in ipairs(paths) do
   require('config.' .. path)
 end
 
-vim.notify = require('notify')
+-- if nvim-notify is enabled use it
+if pcall(require, 'notify') then
+  vim.notify = require('notify')
+end
