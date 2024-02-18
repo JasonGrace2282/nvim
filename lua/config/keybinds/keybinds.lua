@@ -47,3 +47,5 @@ for i=1,#normal_keybinds do
   local binds = normal_keybinds[i]
   vim.keymap.set("n", binds[1], binds[2], binds[3])
 end
+
+
