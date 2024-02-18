@@ -16,4 +16,4 @@ require("lazy").setup(require("plugins"))
 
 vim.cmd[[colorscheme tokyonight]]
 
-require('config.callafter')
+require('config.lsp-setup')
