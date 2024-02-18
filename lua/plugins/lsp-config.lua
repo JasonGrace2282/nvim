@@ -1,6 +1,7 @@
 return {
     {
         "folke/neodev.nvim",
+        priority=700,
         opts = {}
     },
     {
