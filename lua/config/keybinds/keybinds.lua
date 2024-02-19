@@ -53,7 +53,7 @@ local normal_keybinds = {
   },
   {
     "<C-Return>",
-    ":term<CR>a",
+    require('betterTerm').open,
     { desc = "Open terminal in insert mode" }
   }
 }
