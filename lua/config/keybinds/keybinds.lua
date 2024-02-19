@@ -50,6 +50,11 @@ local normal_keybinds = {
     "<leader>xx",
     ":TroubleToggle<CR>",
     { desc = "Toggle trouble.nvim" }
+  },
+  {
+    "<C-Return>",
+    ":term<CR>a",
+    { desc = "Open terminal in insert mode" }
   }
 }
 
