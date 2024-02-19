@@ -1,7 +1,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
--- load neo-tree/telescope if dir is not a file
+-- load telescope if dir is a folder
 local ts_group = vim.api.nvim_create_augroup("TelescopeOnEnter", { clear = true })
 vim.api.nvim_create_autocmd({ "VimEnter" }, {
     callback = function()
