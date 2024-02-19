@@ -27,19 +27,24 @@ local normal_keybinds = {
       { desc="Move leftwards along windows" }
     },
     {
+      "<leader>w>",
+      "20<C-w>>",
+      { desc = "Resize window to the left" }
+    },
+    {
+      "<leader>w<",
+      "20<C-w><",
+      { desc = "Resize window to the right" }
+    },
+    {
       "<leader>rf",
       ":RunCode<CR>",
       { desc="Run Code" }
     },
     {
-      "<C-K>",
-      function ()
-        local luasnip = require('luasnip')
-        if luasnip.expand_or_jumpable() then
-          luasnip.expand_or_jump()
-        end
-      end,
-      { desc="Expand snippet" }
+      "<leader>bd",
+      ":bd<CR>",
+      { desc = "Delete buffer" }
     }
 }
 
