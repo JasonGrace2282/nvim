@@ -6,10 +6,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
   desc = 'LSP actions',
   callback = function(event)
     local opts = {buffer = event.buf}
-
-    -- these will be buffer-local keybindings
-    -- because they only work if you have an active language server
-
     vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
     vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
     vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
@@ -36,7 +32,8 @@ require('mason-lspconfig').setup({
   ensure_installed = {
     "rust_analyzer",
     "lua_ls",
-    "ruff_lsp"
+    "ruff_lsp",
+    "pyright"
   },
   handlers = {
     default_setup,
@@ -48,9 +45,13 @@ local cmp = require('cmp')
 cmp.setup({
   sources = {
     {name = 'nvim_lsp'},
+    {name = 'luasnip'},
+    {name = 'path'},
+    {name = 'buffer'},
+    {name = 'nvim_lua'},
+    {name = 'cmdline'}
   },
   mapping = cmp.mapping.preset.insert({
-    -- Enter key confirms completion item
     ["<Tab>"] = cmp.mapping.select_next_item({behavior = 'select'}),
     ['<C-y>'] = cmp.mapping.confirm({select = false}),
 
