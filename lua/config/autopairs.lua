@@ -34,9 +34,9 @@ local get_closing_for_line = function (line)
   return clo
 end
 
-autopairs.remove_rule('(')
-autopairs.remove_rule('{')
-autopairs.remove_rule('[')
+-- autopairs.remove_rule('(')
+-- autopairs.remove_rule('{')
+-- autopairs.remove_rule('[')
 
 autopairs.add_rule(Rule("[%(%{%[]", "")
   :use_regex(true)
