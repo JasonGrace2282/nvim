@@ -4,13 +4,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
     local nmap = function (bind, cmd, desc) vim.keymap.set('n', bind, cmd, { buffer = event.buf, desc = desc }) end
 
     nmap('K', vim.lsp.buf.hover, "VS Code-like hovering")
-    nmap('gd', ':Telescope lsp_definitions', "Definition of word")
-    nmap('gi', ':Telescope lsp_implementation', "See implementation")
-    nmap('go', ':Telescope lsp_type_definition', "See definition of type (C-like languages)")
-    nmap('gr', ':Telescope lsp_references', "See references")
-    nmap('gK', ':Telescope lsp_signature_help', "See signature")
-    nmap('<leader>rn', ':Telescope lsp_rename', "Rename something")
-    nmap('<leader>cf', ':Telescope lsp_format({async = true})', "Format the file")
+    nmap('gd', ':Telescope lsp_definitions<CR>', "Definition of word")
+    nmap('gi', ':Telescope lsp_implementation<CR>', "See implementation")
+    nmap('go', ':Telescope lsp_type_definition<CR>', "See definition of type (C-like languages)")
+    nmap('gr', ':Telescope lsp_references<CR>', "See references")
+    nmap('gK', ':Telescope lsp_signature_help<CR>', "See signature")
+    nmap('<leader>rn', ':Telescope lsp_rename<CR>', "Rename something")
+    nmap('<leader>cf', ':Telescope lsp_format<CR>', "Format the file")
   end
 })
 
