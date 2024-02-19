@@ -33,7 +33,7 @@ require('mason-lspconfig').setup({
     "rust_analyzer",
     "lua_ls",
     "ruff_lsp",
-    "pyright"
+    "python-lsp-server"
   },
   handlers = {
     default_setup,
