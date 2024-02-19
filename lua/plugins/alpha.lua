@@ -40,8 +40,6 @@ return {
     dashboard.section.buttons.val = {
       -- dashboard.button("SPC j", "󰈚   Restore Session", ":SessionRestore<cr>"),
       dashboard.button("e", "   New file", ":ene <BAR> startinsert <CR>"),
-      dashboard.button("f", "   Find file", ":cd $HOME/dotfiles | Telescope find_files<CR>"),
-      dashboard.button("g", "󰱼   Find word", ":Telescope live_grep<CR>"),
       dashboard.button("r", "   Recent", ":Telescope oldfiles<CR>"),
       dashboard.button("c", "   Config", ":e $MYVIMRC <CR>"),
       dashboard.button("m", "󱌣   Mason", ":Mason<CR>"),
@@ -54,7 +52,7 @@ return {
       return "On Archlinux"
     end
 
-    --dashboard.section.footer.val = footer()
+    dashboard.section.footer.val = footer()
 
     dashboard.opts.opts.noautocmd = true
     alpha.setup(dashboard.opts)
