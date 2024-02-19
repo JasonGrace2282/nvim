@@ -28,7 +28,8 @@ require('mason-lspconfig').setup({
     "rust_analyzer",
     "lua_ls",
     "ruff_lsp",
-    "pylsp"
+    "pylsp",
+    "bashls"
   },
   handlers = {
     default_setup,
