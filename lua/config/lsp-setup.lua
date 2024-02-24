@@ -23,6 +23,13 @@ local default_setup = function(server)
 end
 
 require('mason').setup({})
+require('mason-nvim-dap').setup({
+  ensure_installed = {
+    "python"
+  },
+  automatic_installation = true,
+  handlers = {}
+})
 require('mason-lspconfig').setup({
   ensure_installed = {
     "rust_analyzer",
@@ -34,6 +41,20 @@ require('mason-lspconfig').setup({
   handlers = {
     default_setup,
   },
+})
+
+local lspconfig = require('lspconfig')
+lspconfig.rust_analyzer.setup({
+  capabilities = lsp_capabilities,
+  filetypes = { "rust" },
+  root_dir = require('lspconfig.util').root_pattern("Cargo.toml"),
+  settings = {
+    [ "rust_analyzer" ] = {
+      cargo = {
+        allFeatures = true,
+      }
+    }
+  }
 })
 
 local cmp = require('cmp')

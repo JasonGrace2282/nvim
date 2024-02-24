@@ -13,6 +13,13 @@ return {
         "rustc $fileName;",
         "$dir/$fileNameWithoutExt"
       }
+    },
+    project = {
+      ["~/repos/learn/todo"] = {
+        name = "todoApp",
+        description = "A todo app in Rust",
+        command = "cargo run"
+      }
     }
   }
 }
