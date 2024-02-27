@@ -17,17 +17,12 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, {
 
 -- load paths in lua/config
 local paths = {
-  "lazy",
   "opts",
+  "lazy",
   "autocmds",
   "keybinds",
   "autopairs"
 }
 for _, path in ipairs(paths) do
   require('config.' .. path)
-end
-
--- if nvim-notify is enabled use it
-if pcall(require, 'notify') then
-  vim.notify = require('notify')
 end
