@@ -19,6 +19,11 @@ return {
         name = "todoApp",
         description = "A todo app in Rust",
         command = "cargo run"
+      },
+      ["~/repos/ion"] = {
+        name = "Ion",
+        description = "Intranet for TJHSST",
+        command = "~/repos/ion/scripts/run-open.sh"
       }
     }
   }
