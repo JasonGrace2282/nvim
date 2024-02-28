@@ -1,9 +1,7 @@
 return {
   'rcarriga/nvim-notify',
   enabled = false,
-  config = function(_, opts)
-    local notif = require('notify')
-    notif.setup(opts)
+  init = function (notif)
     vim.notify = notif
   end
 }
