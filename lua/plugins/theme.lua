@@ -4,7 +4,7 @@ return {
   priority = 1000,
   opts = {
     style = 'moon',
-    transparent = true,
+    transparent = false,
     on_highlights = function(hl, c)
       hl.TelescopeNormal = {
         bg = c.bg_dark,
