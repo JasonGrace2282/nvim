@@ -70,7 +70,7 @@ cmp.setup({
   },
   mapping = cmp.mapping.preset.insert({
     ["<Tab>"] = cmp.mapping.select_next_item({behavior = 'select'}),
-    ['<C-y>'] = cmp.mapping.confirm({select = false}),
+    ['<C-l>'] = cmp.mapping.confirm({select = false}),
 
     -- Ctrl + space triggers completion menu
     ['<C-Space>'] = cmp.mapping.complete(),
