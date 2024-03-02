@@ -2,7 +2,7 @@ return {
   'numToStr/Comment.nvim',
   opts = {
     toggler = {
-      line = 'cc',
+      line = 'gc',
       block = 'bc'
     },
     mappings = {

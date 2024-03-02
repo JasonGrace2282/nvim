@@ -41,7 +41,7 @@ return {
       -- dashboard.button("SPC j", "󰈚   Restore Session", ":SessionRestore<cr>"),
       dashboard.button("e", "   New file", ":ene <BAR> startinsert <CR>"),
       dashboard.button("r", "   Recent", ":Telescope oldfiles<CR>"),
-      dashboard.button("c", "   Config", ":e $MYVIMRC <CR>"),
+      dashboard.button("c", "   Config", ":cd ~/.config/nvim <CR>:e $MYVIMRC <CR>"),
       dashboard.button("m", "󱌣   Mason", ":Mason<CR>"),
       dashboard.button("l", "󰒲   Lazy", ":Lazy<CR>"),
       dashboard.button("u", "󰂖   Update plugins", "<cmd>lua require('lazy').sync()<CR>"),
