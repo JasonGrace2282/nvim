@@ -3,7 +3,7 @@ return {
   opts = {
     toggler = {
       line = 'gc',
-      block = 'bc'
+      block = 'gbc'
     },
     mappings = {
       basic = true, -- use toggler
