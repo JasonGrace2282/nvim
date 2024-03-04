@@ -65,8 +65,7 @@ cmp.setup({
     {name = 'luasnip'},
     {name = 'path'},
     {name = 'buffer'},
-    {name = 'nvim_lua'},
-    {name = 'cmdline'}
+    {name = 'nvim_lua'}
   },
   mapping = cmp.mapping.preset.insert({
     ["<Tab>"] = cmp.mapping.select_next_item({behavior = 'select'}),
