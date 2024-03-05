@@ -57,6 +57,37 @@ lspconfig.rust_analyzer.setup({
   }
 })
 
+--   פּ ﯟ   some other good icons
+local kind_icons = {
+	Class = " ",
+	Color = " ",
+	Constant = "ﲀ ",
+	Constructor = " ",
+	Enum = "練",
+	EnumMember = " ",
+	Event = " ",
+	Field = " ",
+	File = "",
+	Folder = " ",
+	Function = " ",
+	Interface = "ﰮ ",
+	Keyword = " ",
+	Method = " ",
+	Module = " ",
+	Operator = "",
+	Property = " ",
+	Reference = " ",
+	Snippet = " ",
+	Struct = " ",
+	Text = " ",
+	TypeParameter = " ",
+	Unit = "塞",
+	Value = " ",
+	Variable = " ",
+	Copilot = " ",
+}
+-- find more here: https://www.nerdfonts.com/cheat-sheet
+
 local cmp = require('cmp')
 
 cmp.setup({
@@ -69,7 +100,8 @@ cmp.setup({
   },
   mapping = cmp.mapping.preset.insert({
     ["<Tab>"] = cmp.mapping.select_next_item({behavior = 'select'}),
-    ['<C-l>'] = cmp.mapping.confirm({select = false}),
+    ["<S-Tab>"] = cmp.mapping.select_prev_item(),
+    ['<C-l>'] = cmp.mapping.confirm({select = true}),
 
     -- Ctrl + space triggers completion menu
     ['<C-Space>'] = cmp.mapping.complete(),
@@ -79,6 +111,33 @@ cmp.setup({
       require('luasnip').lsp_expand(args.body)
     end,
   },
+  formatting = {
+		fields = { "kind", "abbr", "menu" },
+		format = function(entry, vim_item)
+			-- Kind icons
+			vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+			-- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+			vim_item.menu = ({
+				nvim_lsp = "[LSP ]",
+				luasnip = "[Snippet ]",
+				buffer = "[Buffer ]",
+				path = "[Path ]",
+				copilot = "[Copilot ]",
+				nvim_lua = "[Nvim Lua ]",
+				calc = "[Calc 󰃬]",
+				neorg = "[Neorg ]",
+			})[entry.source.name]
+			return vim_item
+		end,
+	},
+  window = {
+		completion = cmp.config.window.bordered(),
+		documentation = cmp.config.window.bordered(),
+	},
+	experimental = {
+		ghost_text = false,
+		native_menu = false,
+	},
 })
 
 local cmp_autopairs = require("nvim-autopairs.completion.cmp")
