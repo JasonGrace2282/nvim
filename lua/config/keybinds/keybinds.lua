@@ -45,6 +45,16 @@ local normal_keybinds = {
     "<C-Return>",
     require('betterTerm').open,
     { desc = "Open terminal in insert mode" }
+  },
+  {
+    "<leader>d",
+    "\"_d",
+    { desc = "Delete without copying" }
+  },
+  {
+    "<C-p>",
+    ":nohl<CR>",
+    { desc = "Clear highlighting" }
   }
 }
 
