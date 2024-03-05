@@ -119,13 +119,11 @@ cmp.setup({
 			-- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
 			vim_item.menu = ({
 				nvim_lsp = "[LSP ]",
-				luasnip = "[Snippet ]",
-				buffer = "[Buffer ]",
+				luasnip = "[Snip ]",
+				buffer = "[Buf ]",
 				path = "[Path ]",
 				copilot = "[Copilot ]",
-				nvim_lua = "[Nvim Lua ]",
-				calc = "[Calc 󰃬]",
-				neorg = "[Neorg ]",
+				nvim_lua = "[Lua ]",
 			})[entry.source.name]
 			return vim_item
 		end,
