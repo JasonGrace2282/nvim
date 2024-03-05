@@ -37,19 +37,9 @@ local normal_keybinds = {
     { desc = "Resize window to the right" }
   },
   {
-    "<leader>rf",
-    ":RunCode<CR>",
-    { desc="Run Code" }
-  },
-  {
     "<leader>bd",
     ":bd<CR>",
     { desc = "Delete buffer" }
-  },
-  {
-    "<leader>xx",
-    ":TroubleToggle<CR>",
-    { desc = "Toggle trouble.nvim" }
   },
   {
     "<C-Return>",

@@ -1,5 +1,6 @@
 return {
   "CRAG666/code_runner.nvim",
+  lazy = true,
   opts = {
     filetype = {
       java = {
@@ -15,5 +16,12 @@ return {
       }
     },
     project = require('config.projects')
+  },
+  keys = {
+    {
+      "<leader>rf",
+      ":RunCode<CR>",
+      { desc="Run Code" }
+    },
   }
 }
