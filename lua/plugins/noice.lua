@@ -22,6 +22,12 @@ return {
         winhighlight = { Normal = "Normal", FloatBorder = "DiagnosticInfo" },
       },
     },
+    views = {
+      notify = {
+        level = vim.log.levels.INFO,
+        replace = true
+      }
+    }
   },
   dependencies = {
     -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
