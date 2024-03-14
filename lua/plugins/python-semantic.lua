@@ -4,6 +4,7 @@ return {
   ft = "python",
   build = ":UpdateRemotePlugins",
   init = function()
+    vim.g.python3_host_prog = "/usr/bin/python3"
     -- Disabled these features better provided by LSP or other more general plugins
     vim.g["semshi#error_sign"] = false
     vim.g["semshi#simplify_markup"] = false
