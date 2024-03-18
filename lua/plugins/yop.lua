@@ -7,8 +7,8 @@ return {
       {"n", "v"},
       "t",
       function (lines)
-        local line = string.gsub(lines[#lines], '^%s*(.-)%s*$', '%1')
-        return { string.sub(line, -1) }
+        local line = lines[#lines]:gsub('^%s*(.-)%s*$', '%1')
+        return { line:sub(-1) }
       end
     }
   },
