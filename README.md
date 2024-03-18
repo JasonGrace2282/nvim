@@ -6,7 +6,7 @@ Currently working on my neovim config.
 ### Installation:
 ```bash
 git clone https://github.com/JasonGrace2282/nvim ~/.config/nvim
-touch ~/.config/nvim/lua/config/projects.lua && echo "return {}" > ~/.config/nvim/lua/config/projects.lua
+echo "return {}" > ~/.config/nvim/lua/config/projects.lua
 ```
 
 ### Future plans
