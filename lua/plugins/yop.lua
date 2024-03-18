@@ -8,11 +8,7 @@ return {
       "t",
       function (lines)
         local line = string.gsub(lines[#lines], '^%s*(.-)%s*$', '%1')
-        local result = line[#line]
-        if result == nil then
-          result = "\""
-        end
-        return { result }
+        return { string.sub(line, -1) }
       end
     }
   },
