@@ -5,14 +5,14 @@ return {
     filetype = {
       java = {
         "cd $dir;",
-        "javac $fileName;",
-        "java $fileNameWithoutExt"
+        "javac \"$fileName\" &&",
+        "java \"$fileNameWithoutExt\""
       },
       python = "python",
       rust = {
         "cd $dir;",
-        "rustc $fileName;",
-        "$dir/$fileNameWithoutExt"
+        "rustc \"$fileName\" &&",
+        "\"$fileNameWithoutExt\""
       }
     },
     project = require('config.projects')

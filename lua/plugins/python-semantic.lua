@@ -3,6 +3,7 @@ return {
   "wookayin/semshi", -- use a maintained fork
   ft = "python",
   build = ":UpdateRemotePlugins",
+  enabled = false,
   init = function()
     vim.g.python3_host_prog = "/usr/bin/python3"
     -- Disabled these features better provided by LSP or other more general plugins
