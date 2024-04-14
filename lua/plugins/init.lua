@@ -9,6 +9,9 @@ for _, path in ipairs(paths) do
 
   if fname ~= "init" then
     local plug = require('plugins.' .. fname)
+    if type(plug) ~= "table" then
+      goto continue
+    end
 
     if type(plug[0]) ~= "table" then
       plugins[#plugins + 1] = plug
@@ -18,6 +21,7 @@ for _, path in ipairs(paths) do
       end
     end
   end
+    ::continue::
 end
 
 return plugins
