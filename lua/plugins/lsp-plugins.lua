@@ -34,6 +34,7 @@ return {
     dependencies = { "rafamadriz/friendly-snippets" },
     opts = {},
     init = function (_)
+      vim.diagnostic.config({virtual_text = false})
       require('luasnip.loaders.from_vscode').lazy_load()
     end
   },

@@ -17,14 +17,23 @@ local normal_keybinds = {
     { desc="Nicer live-grep" }
   },
   {
+    "<leader>ud",
+    function ()
+      vim.diagnostic.config({virtual_text = true})
+    end,
+    { desc = "turn on inline errors" }
+  },
+  {
+    "<leader>rd",
+    function ()
+      vim.diagnostic.config({virtual_text = false})
+    end,
+    { desc = "turn off inline errors" }
+  },
+  {
     "<C-h>",
     "<C-w>h",
     { desc="Move rightwards along windows" }
-  },
-  {
-    "<C-l>",
-    "<C-w>l",
-    { desc="Move leftwards along windows" }
   },
   {
     "<leader>w>",
