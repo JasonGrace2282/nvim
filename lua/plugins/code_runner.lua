@@ -15,7 +15,7 @@ return {
         "\"$fileNameWithoutExt\""
       }
     },
-    project = require('config.projects')
+    project = pcall(require, 'config.projects') or {}
   },
   keys = {
     {
