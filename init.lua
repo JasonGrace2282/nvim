@@ -24,7 +24,8 @@ local paths = {
   "opts",
   "lazy",
   "autocmds",
-  "keybinds"
+  "keybinds",
+  "highlight"
 }
 for _, path in ipairs(paths) do
   require('config.' .. path)
