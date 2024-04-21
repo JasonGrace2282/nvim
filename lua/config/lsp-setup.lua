@@ -35,6 +35,7 @@ require('mason-lspconfig').setup({
     "rust_analyzer",
     "lua_ls",
     "pylsp",
+    "basedpyright",
     "bashls"
   },
   handlers = {
