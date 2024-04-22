@@ -11,5 +11,13 @@ return {
   {
     "tikhomirov/vim-glsl",
     ft="glsl",
+  },
+  {
+    'windwp/nvim-ts-autotag',
+    opts = {}
+  },
+  {
+    "meatballs/notebook.nvim",
+    opts = {}
   }
 }
