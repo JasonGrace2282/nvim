@@ -14,20 +14,6 @@ return {
     "williamboman/mason-lspconfig.nvim",
     priority=100
   },
-  {
-    "nvim-treesitter/nvim-treesitter",
-    version = false,
-    build = ":TSUpdate",
-    lazy = false,
-    opts = {
-      highlight = {
-        enable = true
-      }
-    },
-    config = function (_, opts)
-      require('nvim-treesitter.configs').setup(opts)
-    end
-  },
   { "neovim/nvim-lspconfig" },
   {
     'hrsh7th/cmp-nvim-lsp',
