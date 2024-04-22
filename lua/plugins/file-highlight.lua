@@ -6,6 +6,10 @@ return {
   },
   {
     'fladson/vim-kitty',
-    ft = 'kitty'
+    ft = 'kitty',
+  },
+  {
+    "tikhomirov/vim-glsl",
+    ft="glsl",
   }
 }
