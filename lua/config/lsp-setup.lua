@@ -34,7 +34,7 @@ require('mason-lspconfig').setup({
   ensure_installed = {
     "rust_analyzer",
     "lua_ls",
-    "pylsp",
+    -- "pylsp",
     "basedpyright",
     "bashls"
   },
@@ -44,17 +44,15 @@ require('mason-lspconfig').setup({
 })
 
 local lspconfig = require('lspconfig')
-lspconfig.rust_analyzer.setup({
+
+lspconfig.basedpyright.setup({
   capabilities = lsp_capabilities,
-  filetypes = { "rust" },
-  root_dir = require('lspconfig.util').root_pattern("Cargo.toml"),
   settings = {
-    [ "rust_analyzer" ] = {
-      cargo = {
-        allFeatures = true,
-      }
-    }
-  }
+      basedpyright = {
+        -- No overly opinionated errors
+        typeCheckingMode = "standard",
+      },
+    },
 })
 
 --   פּ ﯟ   some other good icons

@@ -1,5 +1,8 @@
 local link_map = {
   ["@python.self"] = "@variable.builtin",
+  ["@python.cls"] = "@variable.builtin",
+  ["@python.callable"] = "@constructor",
+  ["@python.decorator"] = "PreProc",
 }
 
 for link, target in pairs(link_map) do
