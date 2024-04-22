@@ -8,7 +8,7 @@ This config is mostly stable and ready for use.
 
 ### Installation:
 ```bash
-git clone https://github.com/JasonGrace2282/nvim ~/.config/nvim
+curl -L https://raw.githubusercontent.com/JasonGrace2282/nvim/main/setup.sh | bash
 ```
 
 If you would like to add projects (utilized by `code_runner.nvim`),

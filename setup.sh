@@ -3,8 +3,8 @@ if test -d "$HOME/.config/nvim"; then
   mv "$HOME/.config/nvim" "$HOME/.config/nvim.backup"
 fi
 
-"Cloning config"
-git clone https://github.com/JasonGrace2282/nvim.git "$HOME/.config/nvim"
+echo "Cloning config"
+git clone https://github.com/JasonGrace2282/nvim.git "$HOME/.config/nvim" > /dev/null
 rm -rf "$HOME/.config/nvim/.git"
 
 echo "Setting up projects"
