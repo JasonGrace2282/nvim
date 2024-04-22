@@ -1,3 +1,4 @@
 **/.vscode
 lazy-lock.json
 lua/config/projects.lua
+.luarc.json
