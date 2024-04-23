@@ -9,11 +9,7 @@ return {
         "java \"$fileNameWithoutExt\""
       },
       python = "python",
-      rust = {
-        "cd $dir;",
-        "rustc \"$fileName\" &&",
-        "\"$fileNameWithoutExt\""
-      }
+      rust = { "cargo run" }
     },
     project = pcall(require, 'config.projects') and require('config.projects') or {}
   },

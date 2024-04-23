@@ -30,30 +30,40 @@ require('mason-nvim-dap').setup({
   automatic_installation = true,
   handlers = {}
 })
-require('mason-lspconfig').setup({
-  ensure_installed = {
+
+local use_based_pyright = false
+local ensure_installed = {
     "rust_analyzer",
     "lua_ls",
-    -- "pylsp",
-    "basedpyright",
     "bashls"
-  },
+  }
+
+if use_based_pyright then
+  ensure_installed[#ensure_installed+1] = "basedpyright"
+else
+  ensure_installed[#ensure_installed+1] = "pyright"
+end
+
+require('mason-lspconfig').setup({
+  ensure_installed = ensure_installed,
   handlers = {
     default_setup,
   },
 })
 
-local lspconfig = require('lspconfig')
+if use_based_pyright then
+  local lspconfig = require('lspconfig')
 
-lspconfig.basedpyright.setup({
-  capabilities = lsp_capabilities,
-  settings = {
-      basedpyright = {
-        -- No overly opinionated errors
-        typeCheckingMode = "standard",
+  lspconfig.basedpyright.setup({
+    capabilities = lsp_capabilities,
+    settings = {
+        basedpyright = {
+          -- No overly opinionated errors
+          typeCheckingMode = "standard",
+        },
       },
-    },
-})
+  })
+end
 
 --   פּ ﯟ   some other good icons
 local kind_icons = {
