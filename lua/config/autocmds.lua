@@ -9,6 +9,14 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
+vim.api.nvim_create_autocmd({'BufNewFile','BufRead'}, {
+  group = augroup('i3config_ft_detection'),
+  pattern = {'*/templates/*.html'},
+  callback = function ()
+    vim.cmd[[set filetype=htmldjango]]
+  end,
+})
+
 -- load telescope on startup if dir is a folder
 local ts_group = vim.api.nvim_create_augroup("TelescopeOnEnter", { clear = true })
 vim.api.nvim_create_autocmd({ "VimEnter" }, {
