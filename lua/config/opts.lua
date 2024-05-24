@@ -65,9 +65,12 @@ if vim.fn.has("nvim-0.10") == 1 then
   opt.smoothscroll = true
 end
 
--- Folding
-opt.foldlevel = 99
-
 -- Fix markdown indentation settings
 vim.g.markdown_recommended_style = 0
 vim.g.pyindent_open_paren = opt.shiftwidth
+
+-- ufo folding
+opt.foldcolumn = '1' -- '0' is not bad
+opt.foldlevel = 99 -- Using ufo provider need a large value
+opt.foldlevelstart = 99
+opt.foldenable = true
