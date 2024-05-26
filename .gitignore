@@ -2,3 +2,4 @@
 lazy-lock.json
 lua/config/projects.lua
 .luarc.json
+lua/plugins/waka.lua
