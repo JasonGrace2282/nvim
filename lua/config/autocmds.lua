@@ -36,11 +36,11 @@ vim.api.nvim_set_hl(0, '@string.documentation.python', { link="String" })
 
 -- Example custom highlighting
 
--- local function set_highlight_token(token, args, label)
---   vim.lsp.semantic_tokens.highlight_token(
---     token, args.buf, args.data.client_id, label
---   )
--- end
+local function set_highlight_token(token, args, label)
+  vim.lsp.semantic_tokens.highlight_token(
+    token, args.buf, args.data.client_id, label
+  )
+end
 
 -- local function py_set_by_text(args)
 --   local token = args.data.token
@@ -59,12 +59,22 @@ vim.api.nvim_set_hl(0, '@string.documentation.python', { link="String" })
 --   end
 --   set_highlight_token(token, args, label)
 -- end
--- local py_autocmds = {
---   py_set_by_text,
--- }
--- for _, callback in ipairs(py_autocmds) do
---   vim.api.nvim_create_autocmd("LspTokenUpdate", {
---     pattern = {"*.py",},
---     callback = callback,
---   })
--- end
+
+local function nicer_heighlight_undef(args)
+  local token = args.data.token
+  if token.type == "unresolvedReference" then
+    -- I like this color
+    set_highlight_token(token, args, "@lsp.type.interface")
+  end
+end
+
+local function add_autocmds_by_fname(autocmds, ext)
+  for _, callback in ipairs(autocmds) do
+    vim.api.nvim_create_autocmd("LspTokenUpdate", {
+      pattern = {"*." .. ext,},
+      callback = callback,
+    })
+  end
+end
+
+add_autocmds_by_fname({nicer_heighlight_undef}, "rs")
