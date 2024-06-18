@@ -17,6 +17,15 @@ vim.api.nvim_create_autocmd({'BufNewFile','BufRead'}, {
   end,
 })
 
+vim.api.nvim_create_autocmd({'BufNewFile','BufRead'}, {
+  group = augroup('lang'),
+  pattern = {'*.rs'},
+  callback = function ()
+    vim.lsp.inlay_hint.enable(true, { buffer=0 })
+  end,
+})
+
+
 -- load telescope on startup if dir is a folder
 local ts_group = vim.api.nvim_create_augroup("TelescopeOnEnter", { clear = true })
 vim.api.nvim_create_autocmd({ "VimEnter" }, {

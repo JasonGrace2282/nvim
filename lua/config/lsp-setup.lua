@@ -1,7 +1,7 @@
 vim.api.nvim_create_autocmd('LspAttach', {
   desc = 'LSP actions',
   callback = function(event)
-    local nmap = function (bind, cmd, desc) vim.keymap.set('n', bind, cmd, { buffer = event.buf, desc = desc }) end
+    local nmap = function (bind, cmd, desc) vim.keymap.set('n', bind, cmd, { buffer = event.buf, desc = desc, silent=true }) end
 
     nmap('K', vim.lsp.buf.hover, "VS Code-like hovering")
     nmap('gd', ':Telescope lsp_definitions<CR>', "Definition of word")
@@ -16,8 +16,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
 lsp_capabilities.textDocument.foldingRange = {
-    dynamicRegistration = false,
-    lineFoldingOnly = true
+  dynamicRegistration = false,
+  lineFoldingOnly = true
 }
 
 local default_setup = function(server)
@@ -37,10 +37,10 @@ require('mason-nvim-dap').setup({
 
 local use_based_pyright = false
 local ensure_installed = {
-    "rust_analyzer",
-    "lua_ls",
-    "bashls"
-  }
+  "rust_analyzer",
+  "lua_ls",
+  "bashls"
+}
 
 if use_based_pyright then
   ensure_installed[#ensure_installed+1] = "basedpyright"
@@ -52,6 +52,9 @@ require('mason-lspconfig').setup({
   ensure_installed = ensure_installed,
   handlers = {
     default_setup,
+    ["rust_analyzer"] = function ()
+      -- do nothing, rustacean handles this
+    end
   },
 })
 
@@ -71,32 +74,32 @@ end
 
 --   פּ ﯟ   some other good icons
 local kind_icons = {
-	Class = " ",
-	Color = " ",
-	Constant = "ﲀ ",
-	Constructor = " ",
-	Enum = "練",
-	EnumMember = " ",
-	Event = " ",
-	Field = " ",
-	File = "",
-	Folder = " ",
-	Function = " ",
-	Interface = "ﰮ ",
-	Keyword = " ",
-	Method = " ",
-	Module = " ",
-	Operator = "",
-	Property = " ",
-	Reference = " ",
-	Snippet = " ",
-	Struct = " ",
-	Text = " ",
-	TypeParameter = " ",
-	Unit = "塞",
-	Value = " ",
-	Variable = " ",
-	Copilot = " ",
+  Class = " ",
+  Color = " ",
+  Constant = "ﲀ ",
+  Constructor = " ",
+  Enum = "練",
+  EnumMember = " ",
+  Event = " ",
+  Field = " ",
+  File = "",
+  Folder = " ",
+  Function = " ",
+  Interface = "ﰮ ",
+  Keyword = " ",
+  Method = " ",
+  Module = " ",
+  Operator = "",
+  Property = " ",
+  Reference = " ",
+  Snippet = " ",
+  Struct = " ",
+  Text = " ",
+  TypeParameter = " ",
+  Unit = "塞",
+  Value = " ",
+  Variable = " ",
+  Copilot = " ",
 }
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 
@@ -124,30 +127,31 @@ cmp.setup({
     end,
   },
   formatting = {
-		fields = { "kind", "abbr", "menu" },
-		format = function(entry, vim_item)
-			-- Kind icons
-			vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
-			-- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
-			vim_item.menu = ({
-				nvim_lsp = "[LSP ]",
-				luasnip = "[Snip ]",
-				buffer = "[Buf ]",
-				path = "[Path ]",
-				copilot = "[Copilot ]",
-				nvim_lua = "[Lua ]",
-			})[entry.source.name]
-			return vim_item
-		end,
-	},
+    expandable_indicator = true,
+    fields = { "kind", "abbr", "menu" },
+    format = function(entry, vim_item)
+      -- Kind icons
+      vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+      -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+      vim_item.menu = ({
+        nvim_lsp = "[LSP ]",
+        luasnip = "[Snip ]",
+        buffer = "[Buf ]",
+        path = "[Path ]",
+        copilot = "[Copilot ]",
+        nvim_lua = "[Lua ]",
+      })[entry.source.name]
+      return vim_item
+    end,
+  },
   window = {
-		completion = cmp.config.window.bordered(),
-		documentation = cmp.config.window.bordered(),
-	},
-	experimental = {
-		ghost_text = false,
-		native_menu = false,
-	},
+      completion = cmp.config.window.bordered(),
+      documentation = cmp.config.window.bordered(),
+  },
+  experimental = {
+    ghost_text = false,
+    native_menu = false,
+  },
 })
 
 local cmp_autopairs = require("nvim-autopairs.completion.cmp")

@@ -68,7 +68,9 @@ local normal_keybinds = {
 }
 
 for _, binds in ipairs(normal_keybinds) do
-  vim.keymap.set("n", binds[1], binds[2], binds[3])
+  local opts = binds[3]
+  opts.silent = true
+  vim.keymap.set("n", binds[1], binds[2], opts)
 end
 
 
