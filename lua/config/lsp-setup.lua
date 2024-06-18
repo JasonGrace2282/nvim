@@ -64,11 +64,11 @@ if use_based_pyright then
   lspconfig.basedpyright.setup({
     capabilities = lsp_capabilities,
     settings = {
-        basedpyright = {
-          -- No overly opinionated errors
-          typeCheckingMode = "standard",
-        },
+      basedpyright = {
+        -- No overly opinionated errors
+        typeCheckingMode = "standard",
       },
+    },
   })
 end
 
