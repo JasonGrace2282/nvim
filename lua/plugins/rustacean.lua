@@ -22,7 +22,7 @@ return {
           lspmap("<leader>ca", "codeAction", "rust_analyzer features")
           lspmap("<leader>rd", "renderDiagnostic", "Nicer feedback from trouble.nvim")
           lspmap("<leader>i", { 'moveItem', 'up' }, "Move line up one")
-          lspmap("<leader>i", { 'moveItem', 'down' }, "Move line down one")
+          lspmap("<leader>u", { 'moveItem', 'down' }, "Move line down one")
 
           nmap("<leader>rp", vim.cmd.RustFmt, "Format file")
         end
