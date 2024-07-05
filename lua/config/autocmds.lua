@@ -2,6 +2,13 @@ local function augroup(name)
   return vim.api.nvim_create_augroup("supervim_" .. name, { clear = true })
 end
 
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+  pattern = "*.wgsl",
+  callback = function()
+    vim.bo.filetype = "wgsl"
+  end,
+})
+
 vim.api.nvim_create_autocmd("TextYankPost", {
   group = augroup("highlight_yank"),
   callback = function()
