@@ -32,6 +32,7 @@ return {
     "zbirenbaum/copilot-cmp",
     config = function()
       require("copilot_cmp").setup()
+      vim.keymap.set('n', '<leader>cd', '<cmd>Copilot toggle<CR>', { desc="toggle Copilot" })
     end
   }
 }

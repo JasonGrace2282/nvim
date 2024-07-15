@@ -1,5 +1,5 @@
 return {
   "nvim-treesitter/nvim-treesitter-context",
-  enabled = true,
+  enabled = false,
   opts = { mode = "cursor", max_lines = 3 },
 }
