@@ -26,7 +26,6 @@ return {
         mdx = 'mdx'
       }
     })
-    local ft_to_parser = parsers.filetype_to_parsername
-    ft_to_parser.mdx = "markdown"
+    vim.treesitter.language.register("mdx", "markdown")
   end
 }

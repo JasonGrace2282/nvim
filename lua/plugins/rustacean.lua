@@ -15,7 +15,7 @@ return {
           end
 
           lspmap("<leader>rj", 'joinLines', "Join multiple lines into one smartly")
-          lspmap("<leader>ro", 'openCargo', "Open Cargo.toml")
+          lspmap("<leader>co", 'openCargo', "Open Cargo.toml")
           lspmap("<leader>od", "openDocs", "Open docs.rs for the token")
           lspmap("<leader>M", "expandMacro", "Expand a macro")
           lspmap("<leader>m", "rebuildProcMacro", "Rebuild a macro")
