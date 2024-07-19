@@ -110,6 +110,7 @@ cmp.setup({
     {name = 'copilot'},
     {name = 'nvim_lsp'},
     {name = 'luasnip'},
+    {name = 'lazydev'},
     {name = 'path'},
     {name = 'buffer'},
     {name = 'nvim_lua'},
