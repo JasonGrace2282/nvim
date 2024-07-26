@@ -54,23 +54,23 @@ require('mason-lspconfig').setup({
     default_setup,
     ["rust_analyzer"] = function ()
       -- do nothing, rustacean handles this
+    end,
+    ["basedpyright"] = function ()
+      local lspconfig = require('lspconfig')
+
+      lspconfig.basedpyright.setup({
+        capabilities = lsp_capabilities,
+        settings = {
+          basedpyright = {
+            -- No overly opinionated errors
+            typeCheckingMode = "standard",
+          },
+        },
+      })
     end
   },
 })
 
-if use_based_pyright then
-  local lspconfig = require('lspconfig')
-
-  lspconfig.basedpyright.setup({
-    capabilities = lsp_capabilities,
-    settings = {
-      basedpyright = {
-        -- No overly opinionated errors
-        typeCheckingMode = "standard",
-      },
-    },
-  })
-end
 
 --   פּ ﯟ   some other good icons
 local kind_icons = {
