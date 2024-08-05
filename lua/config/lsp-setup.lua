@@ -10,7 +10,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     nmap('gr', ':Telescope lsp_references<CR>', "See references")
     nmap('gK', ':Telescope lsp_signature_help<CR>', "See signature")
     nmap('<leader>rn', ':Telescope lsp_rename<CR>', "Rename something")
-    nmap('<leader>cf', ':Telescope lsp_format<CR>', "Format the file")
+    nmap('<leader>cf', vim.lsp.buf.format, "Format the file")
   end
 })
 
