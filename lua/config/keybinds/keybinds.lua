@@ -62,7 +62,7 @@ local normal_keybinds = {
   },
   {
     "<C-p>",
-    ":nohl<CR>",
+    function () vim.cmd[[nohl]] end,
     { desc = "Clear highlighting" }
   }
 }
