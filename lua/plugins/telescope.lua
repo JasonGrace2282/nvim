@@ -7,7 +7,8 @@ return {
     defaults = {
       file_ignore_patterns = {
         ".*.min.*",
-        ".*vendor/"
+        ".*vendor/",
+        ".*node_modules/",
       }
     }
   }
