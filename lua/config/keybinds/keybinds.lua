@@ -64,6 +64,13 @@ local normal_keybinds = {
     "<C-p>",
     function () vim.cmd[[nohl]] end,
     { desc = "Clear highlighting" }
+  },
+  {
+    "<leader>rp",
+    function ()
+      vim.lsp.buf.format()
+    end,
+    { desc = "Format buffer" }
   }
 }
 
@@ -73,4 +80,6 @@ for _, binds in ipairs(normal_keybinds) do
   vim.keymap.set("n", binds[1], binds[2], opts)
 end
 
+
+vim.keymap.set("t", "<C-space>", "<C-\\><C-n>", { silent = true, desc="terminal normal mode" })
 

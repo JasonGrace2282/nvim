@@ -4,7 +4,7 @@ return {
   opts = {
     filetype = {
       java = {
-        "cd $dir;",
+        "cd \"$dir\";",
         "javac \"$fileName\" &&",
         "java \"$fileNameWithoutExt\""
       },
