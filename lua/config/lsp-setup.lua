@@ -35,7 +35,7 @@ require('mason-nvim-dap').setup({
   handlers = {}
 })
 
-local use_based_pyright = false
+local use_based_pyright = true
 local ensure_installed = {
   "rust_analyzer",
   "lua_ls",
@@ -48,6 +48,7 @@ else
   ensure_installed[#ensure_installed+1] = "pyright"
 end
 
+require("java").setup({})
 require('mason-lspconfig').setup({
   ensure_installed = ensure_installed,
   handlers = {
