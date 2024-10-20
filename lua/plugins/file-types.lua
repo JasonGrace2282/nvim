@@ -19,5 +19,9 @@ return {
   {
     "meatballs/notebook.nvim",
     opts = {}
+  },
+  {
+    "NoahTheDuke/vim-just",
+    ft = { "just" },
   }
 }

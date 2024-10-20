@@ -13,9 +13,10 @@ return {
   { "Bilal2453/luvit-meta", lazy = true }, -- optional `vim.uv` typings
   {
     "williamboman/mason.nvim",
-    priority=500
-    -- this is needed for some reason
-    -- all the real opts are in config/lsp-setup.lua
+    priority=500,
+    opts = {
+      PATH = "append"
+    }
   },
   {
     "williamboman/mason-lspconfig.nvim",

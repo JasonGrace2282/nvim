@@ -26,15 +26,6 @@ local default_setup = function(server)
   })
 end
 
-require('mason').setup({})
-require('mason-nvim-dap').setup({
-  ensure_installed = {
-    "python"
-  },
-  automatic_installation = true,
-  handlers = {}
-})
-
 local use_based_pyright = true
 local ensure_installed = {
   "rust_analyzer",

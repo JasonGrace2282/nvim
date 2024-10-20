@@ -9,6 +9,7 @@ return {
         ".*.min.*",
         ".*vendor/",
         ".*node_modules/",
+        ".*/game\\.js"
       }
     }
   }
