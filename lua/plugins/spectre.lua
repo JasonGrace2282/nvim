@@ -1,7 +1,8 @@
 return {
   "nvim-pack/nvim-spectre",
   keys = {
-    "<space>sr",
+    "<leader>S",
+    "<leader>sp",
   },
   opts = {
     mappings = {
@@ -36,8 +37,13 @@ return {
     "nvim-lua/plenary.nvim",
   },
   init = function()
-    vim.keymap.set("n", "<leader>sr", function()
-      require("spectre").open()
-    end, { desc = "Open nvim-spectre" })
+    local spectre = require("spectre")
+    vim.keymap.set("n", "<leader>S", spectre.toggle, { desc = "Open nvim-spectre", silent = true })
+    vim.keymap.set(
+      "n",
+      "<leader>sp",
+      spectre.open_file_search,
+      { desc = "Open nvim-spectre on current file", silent = true }
+    )
   end,
 }
