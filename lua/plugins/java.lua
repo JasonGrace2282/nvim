@@ -1,4 +1,4 @@
 return {
-  'nvim-java/nvim-java',
-  ft = 'java',
+  "nvim-java/nvim-java",
+  ft = "java",
 }

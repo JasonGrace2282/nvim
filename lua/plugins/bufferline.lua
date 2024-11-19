@@ -1,6 +1,6 @@
 return {
   "akinsho/bufferline.nvim",
-  dependencies = {'nvim-tree/nvim-web-devicons'},
+  dependencies = { "nvim-tree/nvim-web-devicons" },
   lazy = false,
   keys = {
     { "<S-h>", "<cmd>BufferLineCyclePrev<cr>", desc = "Prev buffer" },
@@ -15,7 +15,7 @@ return {
           -- highlight = "Directory",
           text_align = "left",
         },
-      }
-    }
+      },
+    },
   },
 }

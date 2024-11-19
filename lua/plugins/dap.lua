@@ -75,7 +75,7 @@ return {
       end
     end,
     dependencies = {
-      "nvim-neotest/nvim-nio"
+      "nvim-neotest/nvim-nio",
     },
   },
   {
@@ -83,8 +83,8 @@ return {
     priority = 100,
     opts = {
       ensure_installed = {
-        "python"
+        "python",
       },
-    }
-  }
+    },
+  },
 }

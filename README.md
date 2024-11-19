@@ -21,15 +21,15 @@ return {
     file_name = "POO/main.py"
   },
   ["~/deno/example"] = {
-    name = "ExapleDeno",
+    name = "ExampleDeno",
     description = "Project with deno using other command",
     file_name = "http/main.ts",
     command = "deno run --allow-net"
   },
   ["~/cpp/example"] = {
-    name = "ExapleCpp",
+    name = "ExampleCpp",
     description = "Project with make file",
-    command = "make buid && cd buid/ && ./compiled_file"
+    command = "make build && cd build/ && ./compiled_file"
   },
   ["~/private/.*terraform%-prod.-/.-"] = {
     name = "ExampleTerraform",

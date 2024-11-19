@@ -1,0 +1,21 @@
+default_stages: [pre-commit, pre-push]
+fail_fast: false
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: check-ast
+        name: validate python
+      - id: trailing-whitespace
+      - id: mixed-line-ending
+      - id: check-yaml
+  - repo: https://github.com/codespell-project/codespell
+    rev: v2.3.0
+    hooks:
+      - id: codespell
+        files: ^.*\.(py|md|rst)$
+  - repo: https://github.com/JohnnyMorganz/StyLua
+    rev: v2.0.1
+    hooks:
+      - id: stylua-system

@@ -9,7 +9,7 @@ return {
       },
       panel = {
         enabled = false,
-      }
+      },
     },
     config = function(_, opts)
       require("copilot").setup(opts)
@@ -32,7 +32,7 @@ return {
     "zbirenbaum/copilot-cmp",
     config = function()
       require("copilot_cmp").setup()
-      vim.keymap.set('n', '<leader>cd', '<cmd>Copilot toggle<CR>', { desc="toggle Copilot" })
-    end
-  }
+      vim.keymap.set("n", "<leader>cd", "<cmd>Copilot toggle<CR>", { desc = "toggle Copilot" })
+    end,
+  },
 }

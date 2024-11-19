@@ -57,16 +57,16 @@ return {
     dashboard.opts.opts.noautocmd = true
     alpha.setup(dashboard.opts)
 
-    require('alpha').setup(dashboard.opts)
+    require("alpha").setup(dashboard.opts)
 
-    vim.api.nvim_create_autocmd('User', {
-      pattern = 'LazyVimStarted',
+    vim.api.nvim_create_autocmd("User", {
+      pattern = "LazyVimStarted",
       callback = function()
-        local stats = require('lazy').stats()
+        local stats = require("lazy").stats()
         local count = (math.floor(stats.startuptime * 100) / 100)
         dashboard.section.footer.val = {
           "󱐌 " .. stats.count .. " plugins loaded in " .. count .. " ms",
-          " "
+          " ",
         }
         pcall(vim.cmd.AlphaRedraw)
       end,

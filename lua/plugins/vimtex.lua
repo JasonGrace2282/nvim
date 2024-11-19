@@ -1,4 +1,4 @@
 return {
-  'lervag/vimtex',
-  lazy = false
+  "lervag/vimtex",
+  lazy = false,
 }

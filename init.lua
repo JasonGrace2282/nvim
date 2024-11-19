@@ -10,8 +10,8 @@ local paths = {
   "opts",
   "lazy",
   "autocmds",
-  "keybinds"
+  "keybinds",
 }
 for _, path in ipairs(paths) do
-  require('config.' .. path)
+  require("config." .. path)
 end

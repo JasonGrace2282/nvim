@@ -13,22 +13,22 @@ return {
   { "Bilal2453/luvit-meta", lazy = true }, -- optional `vim.uv` typings
   {
     "williamboman/mason.nvim",
-    priority=500,
+    priority = 500,
     opts = {
-      PATH = "append"
-    }
+      PATH = "append",
+    },
   },
   {
     "williamboman/mason-lspconfig.nvim",
-    priority=100
+    priority = 100,
   },
   { "neovim/nvim-lspconfig" },
   {
-    'hrsh7th/cmp-nvim-lsp',
+    "hrsh7th/cmp-nvim-lsp",
     event = { "InsertEnter", "CmdlineEnter" },
   },
   {
-    'hrsh7th/nvim-cmp',
+    "hrsh7th/nvim-cmp",
     dependencies = {
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
@@ -38,12 +38,12 @@ return {
     },
   },
   {
-    'L3MON4D3/LuaSnip',
+    "L3MON4D3/LuaSnip",
     dependencies = { "rafamadriz/friendly-snippets" },
     opts = {},
-    init = function (_)
-      vim.diagnostic.config({virtual_text = false})
-      require('luasnip.loaders.from_vscode').lazy_load()
-    end
+    init = function(_)
+      vim.diagnostic.config({ virtual_text = false })
+      require("luasnip.loaders.from_vscode").lazy_load()
+    end,
   },
 }

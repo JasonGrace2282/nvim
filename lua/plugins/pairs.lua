@@ -1,18 +1,18 @@
 return {
-  'windwp/nvim-autopairs',
+  "windwp/nvim-autopairs",
   event = "InsertEnter",
   opts = {},
   config = function(_, opts)
-    local autopairs = require('nvim-autopairs')
+    local autopairs = require("nvim-autopairs")
     autopairs.setup(opts)
 
-    local Rule = require('nvim-autopairs.rule')
-    local cond = require('nvim-autopairs.conds')
+    local Rule = require("nvim-autopairs.rule")
+    local cond = require("nvim-autopairs.conds")
 
-    local brackets = { { '(', ')' }, { '[', ']' }, { '{', '}' } }
-    autopairs.add_rules {
+    local brackets = { { "(", ")" }, { "[", "]" }, { "{", "}" } }
+    autopairs.add_rules({
       -- Rule for a pair with left-side ' ' and right side ' '
-      Rule(' ', ' ')
+      Rule(" ", " ")
         -- Pair will only occur if the conditional function returns true
         :with_pair(function(opts)
           -- We are checking if we are inserting a space in (), [], or {}
@@ -20,7 +20,7 @@ return {
           return vim.tbl_contains({
             brackets[1][1] .. brackets[1][2],
             brackets[2][1] .. brackets[2][2],
-            brackets[3][1] .. brackets[3][2]
+            brackets[3][1] .. brackets[3][2],
           }, pair)
         end)
         :with_move(cond.none())
@@ -30,24 +30,28 @@ return {
           local col = vim.api.nvim_win_get_cursor(0)[2]
           local context = opts.line:sub(col - 1, col + 2)
           return vim.tbl_contains({
-            brackets[1][1] .. '  ' .. brackets[1][2],
-            brackets[2][1] .. '  ' .. brackets[2][2],
-            brackets[3][1] .. '  ' .. brackets[3][2]
+            brackets[1][1] .. "  " .. brackets[1][2],
+            brackets[2][1] .. "  " .. brackets[2][2],
+            brackets[3][1] .. "  " .. brackets[3][2],
           }, context)
-        end)
-    }
+        end),
+    })
     -- For each pair of brackets we will add another rule
     for _, bracket in pairs(brackets) do
-      autopairs.add_rules {
+      autopairs.add_rules({
         -- Each of these rules is for a pair with left-side '( ' and right-side ' )' for each bracket type
-        Rule(bracket[1] .. ' ', ' ' .. bracket[2])
+        Rule(bracket[1] .. " ", " " .. bracket[2])
           :with_pair(cond.none())
-          :with_move(function(opts) return opts.char == bracket[2] end)
+          :with_move(function(opts)
+            return opts.char == bracket[2]
+          end)
           :with_del(cond.none())
           :use_key(bracket[2])
           -- Removes the trailing whitespace that can occur without this
-          :replace_map_cr(function(_) return '<C-c>2xi<CR><C-c>O' end)
-      }
+          :replace_map_cr(function(_)
+            return "<C-c>2xi<CR><C-c>O"
+          end),
+      })
     end
-  end
+  end,
 }

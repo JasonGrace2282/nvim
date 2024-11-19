@@ -5,7 +5,7 @@ return {
     {
       "<leader>xx",
       ":Trouble diagnostics toggle<CR>",
-      { desc = "Toggle trouble.nvim" }
+      { desc = "Toggle trouble.nvim" },
     },
     {
       "<leader>xX",
@@ -13,7 +13,7 @@ return {
       desc = "Buffer Diagnostics (Trouble)",
     },
   },
-  config = function (_, opts)
+  config = function(_, opts)
     require("trouble").setup(opts)
-  end
+  end,
 }

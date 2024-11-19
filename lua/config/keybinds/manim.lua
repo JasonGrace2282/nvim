@@ -16,6 +16,3 @@ def construct(self):
 ]]
 
 vim.keymap.set("n", "<Leader>mm", command, {})
-
-
-

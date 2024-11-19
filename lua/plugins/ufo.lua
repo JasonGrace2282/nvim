@@ -3,19 +3,19 @@ return {
   lazy = false,
   opts = {
     provider_selector = function()
-        return {'lsp', 'indent'}
-    end
+      return { "lsp", "indent" }
+    end,
   },
-  init = function ()
-    vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
-    vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
+  init = function()
+    vim.keymap.set("n", "zR", require("ufo").openAllFolds)
+    vim.keymap.set("n", "zM", require("ufo").closeAllFolds)
   end,
   keys = {
     "zR",
     "zM",
   },
   dependencies = {
-    'kevinhwang91/promise-async'
+    "kevinhwang91/promise-async",
   },
 
   ---[[[

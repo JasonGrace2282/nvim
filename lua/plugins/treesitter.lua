@@ -7,25 +7,25 @@ return {
     highlight = { enable = true },
     indent = { enable = true },
   },
-  config = function (_, opts)
-    require('nvim-treesitter.configs').setup(opts)
-    local parsers = require('nvim-treesitter.parsers')
+  config = function(_, opts)
+    require("nvim-treesitter.configs").setup(opts)
+    local parsers = require("nvim-treesitter.parsers")
 
     -- wgsl highlighting
     local parser_config = parsers.get_parser_configs()
     parser_config["wgsl"] = {
       install_info = {
         url = "https://github.com/szebniok/tree-sitter-wgsl",
-        files = {"src/parser.c"}
+        files = { "src/parser.c" },
       },
     }
 
     -- mdx highlighting
     vim.filetype.add({
       extension = {
-        mdx = 'mdx'
-      }
+        mdx = "mdx",
+      },
     })
     vim.treesitter.language.register("markdown", "mdx")
-  end
+  end,
 }

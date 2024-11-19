@@ -1,13 +1,13 @@
 return {
-  'numToStr/Comment.nvim',
+  "numToStr/Comment.nvim",
   opts = {
     toggler = {
-      line = 'gc',
-      block = 'gbc'
+      line = "gc",
+      block = "gbc",
     },
     mappings = {
       basic = true, -- use toggler
-      extra = false
-    }
+      extra = false,
+    },
   },
 }

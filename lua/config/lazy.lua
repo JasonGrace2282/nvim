@@ -39,5 +39,4 @@ require("lazy").setup({
   },
 })
 
-
-require('config.lsp-setup')
+require("config.lsp-setup")

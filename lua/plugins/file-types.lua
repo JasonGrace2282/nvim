@@ -5,23 +5,23 @@ return {
     ft = "hypr",
   },
   {
-    'fladson/vim-kitty',
-    ft = 'kitty',
+    "fladson/vim-kitty",
+    ft = "kitty",
   },
   {
     "tikhomirov/vim-glsl",
-    ft="glsl",
+    ft = "glsl",
   },
   {
-    'windwp/nvim-ts-autotag',
-    opts = {}
+    "windwp/nvim-ts-autotag",
+    opts = {},
   },
   {
     "meatballs/notebook.nvim",
-    opts = {}
+    opts = {},
   },
   {
     "NoahTheDuke/vim-just",
     ft = { "just" },
-  }
+  },
 }

@@ -26,28 +26,28 @@ return {
       views = {
         notify = {
           level = vim.log.levels.INFO,
-          replace = true
-        }
+          replace = true,
+        },
       },
       lsp = {
         override = {
-          ['vim.lsp.util.convert_input_to_markdown_lines'] = true,
-          ['vim.lsp.util.stylize_markdown'] = true,
-          ['cmp.entry.get_documentation'] = true,
+          ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+          ["vim.lsp.util.stylize_markdown"] = true,
+          ["cmp.entry.get_documentation"] = true,
         },
-      }
+      },
     },
     dependencies = {
       -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
       "MunifTanjim/nui.nvim",
       "rcarriga/nvim-notify",
-    }
+    },
   },
   {
     "folke/tokyonight.nvim",
     priority = 1000,
     opts = {
-      style = 'moon',
+      style = "moon",
       transparent = false,
       on_highlights = function(hl, c)
         hl.TelescopeNormal = {
@@ -56,19 +56,19 @@ return {
         }
       end,
     },
-    init = function (_)
-      vim.cmd[[colorscheme tokyonight]]
-    end
+    init = function(_)
+      vim.cmd([[colorscheme tokyonight]])
+    end,
   },
   {
-    'stevearc/dressing.nvim',
+    "stevearc/dressing.nvim",
     opts = {},
   },
   {
-    'rcarriga/nvim-notify',
+    "rcarriga/nvim-notify",
     enabled = false,
-    init = function ()
-      vim.notify = require('notify')
-    end
-  }
+    init = function()
+      vim.notify = require("notify")
+    end,
+  },
 }

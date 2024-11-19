@@ -4,20 +4,20 @@ return {
   opts = {
     filetype = {
       java = {
-        "cd \"$dir\";",
-        "javac \"$fileName\" &&",
-        "java \"$fileNameWithoutExt\""
+        'cd "$dir";',
+        'javac "$fileName" &&',
+        'java "$fileNameWithoutExt"',
       },
       python = "python",
-      rust = { "cargo run" }
+      rust = { "cargo run" },
     },
-    project = pcall(require, 'config.projects') and require('config.projects') or {}
+    project = pcall(require, "config.projects") and require("config.projects") or {},
   },
   keys = {
     {
       "<leader>rf",
       ":RunCode<CR>",
-      { desc="Run Code" }
+      { desc = "Run Code" },
     },
-  }
+  },
 }

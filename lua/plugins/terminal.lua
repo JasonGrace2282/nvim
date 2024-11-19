@@ -1,4 +1,4 @@
 return {
-  'CRAG666/betterTerm.nvim',
-  opts = {}
+  "CRAG666/betterTerm.nvim",
+  opts = {},
 }
