@@ -17,8 +17,8 @@ return {
         },
       },
       file_ignore_patterns = {
-        ".*.min.*",
-        ".*vendor/",
+        ".*\\.min\\.*",
+        ".*vendor/.*",
         ".*node_modules/",
         ".*/game\\.js",
       },
