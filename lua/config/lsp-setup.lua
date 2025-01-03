@@ -41,9 +41,9 @@ else
   ensure_installed[#ensure_installed + 1] = "pyright"
 end
 
-require("java").setup({})
 require("mason-lspconfig").setup({
   ensure_installed = ensure_installed,
+  automatic_installation = false,
   handlers = {
     default_setup,
     ["rust_analyzer"] = function()

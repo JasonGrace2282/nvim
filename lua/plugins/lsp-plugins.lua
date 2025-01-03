@@ -16,6 +16,10 @@ return {
     priority = 500,
     opts = {
       PATH = "append",
+      registries = {
+        "github:nvim-java/mason-registry",
+        "github:mason-org/mason-registry",
+      },
     },
   },
   {

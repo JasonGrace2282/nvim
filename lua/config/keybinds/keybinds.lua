@@ -74,6 +74,13 @@ local normal_keybinds = {
     end,
     { desc = "Format buffer" },
   },
+  {
+    "<leader>lr",
+    function()
+      vim.cmd("LspRestart")
+    end,
+    { desc = "Reload LSP server" },
+  },
 }
 
 for _, binds in ipairs(normal_keybinds) do
