@@ -49,6 +49,7 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, {
 vim.api.nvim_set_hl(0, "@string.documentation.python", { link = "String" })
 vim.api.nvim_set_hl(0, "@lsp.type.unresolvedReference.rust", { undercurl = false })
 vim.api.nvim_set_hl(0, "@module.python", { link = "@variable.python" })
+vim.api.nvim_set_hl(0, "@lsp.type.selfParameter.python", { link = "@lsp.type.selfKeyword" })
 
 -- Example custom highlighting
 

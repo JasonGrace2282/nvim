@@ -3,7 +3,7 @@ vim.g.loaded_netrwPlugin = 1
 vim.g.loaded_netrw = 1
 
 -- use basedpyright for semantic highlighting, but let tree-sitter take precendence
-vim.hl.priorities.semantic_tokens = 95
+vim.hl.priorities.semantic_tokens = 126
 
 local opt = vim.opt
 

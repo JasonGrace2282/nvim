@@ -49,19 +49,6 @@ require("mason-lspconfig").setup({
     ["rust_analyzer"] = function()
       -- do nothing, rustacean handles this
     end,
-    ["pyright"] = function()
-      local lspconfig = require("lspconfig")
-
-      lspconfig.pyright.setup({
-        capabilities = lsp_capabilities,
-        settings = {
-          basedpyright = {
-            -- No overly opinionated errors
-            typeCheckingMode = "off",
-          },
-        },
-      })
-    end,
     ["basedpyright"] = function()
       local lspconfig = require("lspconfig")
 
@@ -70,6 +57,11 @@ require("mason-lspconfig").setup({
         settings = {
           basedpyright = {
             -- No overly opinionated errors
+            typeCheckingMode = "standard",
+          },
+        },
+        basedpyright = {
+          analysis = {
             typeCheckingMode = "standard",
           },
         },
