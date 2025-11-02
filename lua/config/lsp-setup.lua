@@ -41,31 +41,23 @@ else
   ensure_installed[#ensure_installed + 1] = "pyright"
 end
 
+vim.lsp.config("basedpyright", {
+  capabilities = lsp_capabilities,
+  settings = {
+    basedpyright = {
+      typeCheckingMode = "standard",
+    },
+  },
+})
+
 require("mason").setup({})
 require("mason-lspconfig").setup({
   ensure_installed = ensure_installed,
+  automatic_enable = true,
   handlers = {
     default_setup,
     ["rust_analyzer"] = function()
       -- do nothing, rustacean handles this
-    end,
-    ["basedpyright"] = function()
-      local lspconfig = require("lspconfig")
-
-      lspconfig.basedpyright.setup({
-        capabilities = lsp_capabilities,
-        settings = {
-          basedpyright = {
-            -- No overly opinionated errors
-            typeCheckingMode = "standard",
-          },
-        },
-        basedpyright = {
-          analysis = {
-            typeCheckingMode = "standard",
-          },
-        },
-      })
     end,
   },
 })
