@@ -28,27 +28,21 @@ local default_setup = function(server)
   })
 end
 
-local use_based_pyright = true
 local ensure_installed = {
   "rust_analyzer",
   "lua_ls",
   "bashls",
+  "ty",
 }
 
-if use_based_pyright then
-  ensure_installed[#ensure_installed + 1] = "basedpyright"
-else
-  ensure_installed[#ensure_installed + 1] = "pyright"
-end
-
-vim.lsp.config("basedpyright", {
-  capabilities = lsp_capabilities,
-  settings = {
-    basedpyright = {
-      typeCheckingMode = "standard",
-    },
-  },
-})
+-- vim.lsp.config("basedpyright", {
+--   capabilities = lsp_capabilities,
+--   settings = {
+--     basedpyright = {
+--       typeCheckingMode = "standard",
+--     },
+--   },
+-- })
 
 require("mason").setup({})
 require("mason-lspconfig").setup({
