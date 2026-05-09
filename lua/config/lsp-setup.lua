@@ -5,7 +5,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
       vim.keymap.set("n", bind, cmd, { buffer = event.buf, desc = desc, silent = true })
     end
 
-    nmap("K", vim.lsp.buf.hover, "VS Code-like hovering")
     nmap("gd", ":Telescope lsp_definitions<CR>", "Definition of word")
     nmap("gi", ":Telescope lsp_implementation<CR>", "See implementation")
     nmap("go", ":Telescope lsp_type_definition<CR>", "See definition of type (C-like languages)")
